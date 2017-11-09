@@ -1,3 +1,4 @@
+var socket = io();
 var image1, image2, image3;
 var backgroundImage;
 var screenImage1,screenImage2,screenImage3;
@@ -178,7 +179,7 @@ socket.on("secondButtonPress", function(message){
 socket.on("secondButtonRelease", function(message){
   console.log(message);
   screenImages[1].x = imageXstart;
- screenImages[1].y = imageYstart;
+ screenImages[1].y = screenImages[1].yStart;
   screenImages[1].wideSize = smallImageSize;
   screenImages[1].vertSize = smallImageSize;
   screenImages[1].big=false;
@@ -198,7 +199,7 @@ socket.on("thirdButtonPress", function(message){
 socket.on("thirdButtonRelease", function(message){
   console.log(message);
   screenImages[2].x = imageXstart;
- screenImages[2].y = imageYstart;
+ screenImages[2].y = screenImages[2].yStart;
   screenImages[2].wideSize = smallImageSize;
   screenImages[2].vertSize = smallImageSize;
   screenImages[2].big=false;

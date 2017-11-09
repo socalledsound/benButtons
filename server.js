@@ -33,7 +33,7 @@ board.on("ready", function() {
 
   buttons = [firstButton, secondButton, thirdButton];
 
-  board.repl.oinject({
+  board.repl.inject({
     buttons: buttons
   })
 
@@ -62,34 +62,34 @@ ioSocket.on('connection', (socket) => {
 
 
 
-  // buttons[1].on("press", function() {
-  //   console.log("second button on");
-  //   socket.emit("secondButtonPress", {
-  //     message: "second pressed"
-  //   })
-  // });
-  //
-  // buttons[1].on("release", function() {
-  //   console.log("second button off");
-  //   socket.emit("secondButtonRelease", {
-  //     message: "second release"
-  //   })
-  // });
-  //
-  //
-  // buttons[2].on("press", function() {
-  //   console.log("third button on");
-  //   socket.emit("thirdButtonPress", {
-  //     message: "third pressed"
-  //   })
-  // });
-  //
-  // buttons[2].on("release", function() {
-  //   console.log("third button off");
-  //   socket.emit("thirdButtonRelease", {
-  //     message: "third pressed"
-  //   })
-  // });
+  buttons[1].on("press", function() {
+     console.log("second button on");
+     socket.emit("secondButtonPress", {
+       message: "second pressed"
+     })
+   });
+  
+   buttons[1].on("release", function() {
+     console.log("second button off");
+     socket.emit("secondButtonRelease", {
+       message: "second release"
+     })
+   });
+  
+  
+   buttons[2].on("press", function() {
+     console.log("third button on");
+     socket.emit("thirdButtonPress", {
+       message: "third pressed"
+     })
+   });
+  
+   buttons[2].on("release", function() {
+     console.log("third button off");
+     socket.emit("thirdButtonRelease", {
+       message: "third pressed"
+     })
+   });
 
 
 });
